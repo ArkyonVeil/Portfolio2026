@@ -1,8 +1,7 @@
 :root {
     background-color: #181a1b;
     color: #e8e6e3;
-    background-image:
-    linear-gradient(var(--col1), var(--col2), var(--col3), var(--col4));
+    background-image: linear-gradient(var(--col1), var(--col2), var(--col3), var(--col4));
     background-repeat: repeat, no-repeat;
     background-size: auto, auto;
     background-position: 0, 0;
