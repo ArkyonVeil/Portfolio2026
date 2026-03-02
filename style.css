@@ -1,0 +1,1331 @@
+:root {
+    background-color: #181a1b;
+    color: #e8e6e3;
+    background-image:
+    linear-gradient(var(--col1), var(--col2), var(--col3), var(--col4));
+    background-repeat: repeat, no-repeat;
+    background-size: auto, auto;
+    background-position: 0, 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: --col1, --col2, --col3, --col4;
+    transition-duration: 2.5s;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Linux Biolinum G", serif;
+}
+h1{
+    font-family: "Linux Libertine Display Capital", serif;
+}
+h2{
+ font-family: "Linux Libertine", serif;
+}
+
+body {
+    margin: 0;
+}
+.subHeader{
+    text-align: center;
+    font-style: italic;
+}
+
+
+:root:has(#nav1_1:checked),
+:root:has(#nav1:checked) {
+    --col1: #aabedf;
+    --col2: #4a5ccc;
+    --col3: #a63e3e;
+    --col4: #130303;
+}
+:root:has(#nav2_1:checked),
+:root:has(#nav2:checked) {
+    --col1: #2a3a4a;
+    --col2: #7ed5b4;
+    --col3: #1f2862;
+    --col4: #130325;
+}
+
+:root:has(#nav3_1:checked),
+:root:has(#nav3:checked) {
+    --col1: #ba7ff1;
+    --col2: #7341ef;
+    --col3: #a4c1f3;
+    --col4: #311048;
+}
+
+:root:has(#nav4_1:checked),
+:root:has(#na4:checked) {
+    --col1: #101423;
+    --col2: #1763ad;
+    --col3: #e0bb9e;
+    --col4: #401242;
+}
+
+@property --col1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #222222;
+}
+
+@property --col2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #000000;;
+}
+
+@property --col3 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #000000;;
+}
+
+@property --col4 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #000000;;
+}
+
+
+.vignette, .vignetteR {
+    position: fixed;
+    background-image: linear-gradient(90deg, black, transparent);
+    width: 15%;
+    height: 100%;
+    pointer-events: none;
+    animation: gentleOpacity 10s ease infinite;
+    top: 0;
+}
+
+.vignette {
+    left: 0;
+}
+
+.vignetteR {
+    background-image: linear-gradient(-90deg, black, transparent);
+    right: 0;
+}
+
+
+
+div.aContent {
+    padding-top: 3em;
+    max-width: 95vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    justify-content: center;
+}
+
+.aContent p{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.aContent h1,
+div.aContent h2{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aContent > h3{
+    padding-left: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aContent ol{
+    padding-left: 2em;
+}
+
+.imageCenterMid{
+    display: flex;
+    justify-content: center;
+   margin-left: auto;
+    margin-right: auto;
+}
+.imageCenterMid img
+{
+    width: 95%;
+    max-width: 60em;
+}
+
+
+div.secGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img.secImage {
+    flex: 0 0 70%;
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+}
+
+video.secVideo {
+    flex: 0 0 40%;
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
+
+span.miniHighlighter {
+    color: #83c1ff;
+}
+
+.inviCheckbox {
+    display: none;
+}
+
+
+img.tinyStar {
+    width: 2%;
+    height: 2%;
+    position: absolute;
+    animation: 18s ease 1s infinite starSparkle;
+}
+
+img.ts1 {
+    top: 17%;
+    left: 6%;
+    animation-delay: 7s;
+}
+
+img.ts2 {
+    top: 20%;
+    left: 69%;
+    width: 1%;
+    height: 1%;
+    animation-delay: 28s;
+}
+
+img.ts3 {
+    top: 88%;
+    left: 15%;
+    width: 1%;
+    height: 1%;
+    animation-delay: 6s;
+}
+
+img.ts4 {
+    top: 51%;
+    left: 90%;
+    width: 1%;
+    height: 1%;
+    animation-delay: 27s;
+}
+
+img.ts5 {
+    top: 80%;
+    left: 17%;
+    width: 1%;
+    height: 1%;
+    animation-delay: 5s;
+}
+
+img.ts6 {
+    top: 52%;
+    left: 67%;
+    width: 1%;
+    height: 1%;
+    animation-delay: 19s;
+}
+
+img.ts7 {
+    top: 87%;
+    left: 42%;
+    animation-delay: 22s;
+}
+
+img.ts8 {
+    top: 92%;
+    left: 96%;
+    animation-delay: 12s;
+}
+
+
+input[type="radio"] {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+#nav1:checked ~ * .area1 {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+}
+
+#nav2:checked ~ * .area2 {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+}
+
+#nav3:checked ~ * .area3 {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+}
+
+#nav4:checked ~ * .area4 {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+}
+
+#nav5:checked ~ * .area5 {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+}
+
+#nav6:checked ~ * .area6 {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+}
+
+.splitter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3em;
+    flex: 1;
+}
+
+.splitter > img {
+    max-height: 3em;
+}
+
+
+/* Entry Nav */
+
+.entryMaster {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: min(100%, 110vh);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entryVContainer {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    justify-content: center;
+}
+
+.navEntry {;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    max-height: 85vh;
+    padding-top: 2vh;
+}
+
+.navBigButton {
+    width: 90%;
+}
+
+.navBigButton img{
+    max-height: 22vh;
+    animation-name: launcherFadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease;
+}
+
+/*Portrait only settings*/
+@media not all and (min-aspect-ratio: 6/9) {
+    .navP{
+        animation-name: launcherFadeIn;
+        animation-duration: 1s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease;
+    animation-delay: 0.1s;
+    }
+    .navA{
+        animation-name: launcherFadeIn;
+        animation-duration: 1s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease;
+    animation-delay: 0.2s;
+    }
+    .navL {
+        animation-name: launcherFadeIn;
+        animation-duration: 1s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease;
+    animation-delay: 0.3s;
+    }
+
+}
+
+
+@keyframes launcherFadeIn {
+    from{
+        transform: scaleX(0);
+        filter: brightness(500%);
+    }
+    to{
+        transform: scaleX(1);
+        filter: brightness(100%);
+    }
+}
+
+.navBigButton,
+.interactHoverBase{
+    transition: filter 0.2s;
+}
+.navBigButton:hover,
+.interactHoverBase:hover{
+    filter: brightness(0.5);
+    transition: filter 0.2s;
+}
+
+
+.StarStruck{
+    position: absolute;
+    display: flex;
+    width: 99vw;
+    height: 100vh;
+    justify-content: center;
+    opacity: 0.5;
+    overflow: hidden;
+}
+.StarStruck img{
+    scale: 3;
+    animation: infinite 1440s linear starRot;
+
+}
+
+
+
+@keyframes starRot {
+    from{
+        transform: rotateZ(0deg) translateY(-2vh);
+    }
+    to{
+        transform: rotateZ(360deg) translateY(-5vh);
+    }
+}
+
+
+.entryBackground{
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    height: 80vh;
+    justify-content: center;
+}
+.entryBackground img{
+    position: absolute;
+    opacity: 0.3;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+    animation: infinite 30s linear slowRot;
+}
+
+.aDelay1{
+    animation-delay: 0.05s !important;
+}
+.aDelay2{
+    animation-delay: 0.1s !important;
+}
+.aDelay3{
+    animation-delay: 0.15s !important;
+}
+.aDelay4{
+    animation-delay: 0.2s !important;
+}
+.aDelay5{
+    animation-delay: 0.25s !important;
+}
+
+
+@keyframes slowRot {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+/* Desktop Nav Settings */
+@media (min-aspect-ratio: 6/9) {
+
+    .nav{
+        position: sticky;
+    }
+
+.navEntry{
+    padding-top: 0;
+    height: 60vh;
+    max-height: 83vh;
+
+}
+
+    .navBigButton {
+        position: absolute;
+        width: 42%;
+    }
+
+    .navGD {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .navP {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .navA {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .navL {
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+}
+
+.navContact {
+    display: flex;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.navC {
+    width: 100%;
+}
+
+.navContact img {
+    transform: translateY(5px);
+}
+
+/*Portrait only settings*/
+@media not all and (min-aspect-ratio: 6/9) {
+    .navEntry{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .navContact{
+        width: 80%;
+    }
+}
+
+/*Post launch checks*/
+#nav0:not(:checked) ~ .StarStruck,
+#nav0:not(:checked) ~ .entryBackground,
+#nav0:not(:checked) ~ .entryMaster{
+    display: none;
+}
+
+
+/*Desktop Header Navigation*/
+.desktopHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5em;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #222222;
+    font-family: "Linux Libertine Capitals", serif;
+    font-size: 1.5em;
+}
+.desktopHeader label:hover{
+    opacity: 0.5;
+}
+
+#nav0:checked ~ .desktopHeader{
+    display: none;
+}
+
+#nav1_1:checked ~ .desktopHeader #desktopNav1::after,
+#nav1_1:checked ~ .desktopHeader #desktopNav1::before,
+#nav1:checked ~ .desktopHeader #desktopNav1::after,
+#nav1:checked ~ .desktopHeader #desktopNav1::before,
+#nav2:checked ~ .desktopHeader #desktopNav2::after,
+#nav2:checked ~ .desktopHeader #desktopNav2::before,
+#nav2_1:checked ~ .desktopHeader #desktopNav2::after,
+#nav2_1:checked ~ .desktopHeader #desktopNav2::before,
+#nav3:checked ~ .desktopHeader #desktopNav3::after,
+#nav3:checked ~ .desktopHeader #desktopNav3::before,
+#nav3_1:checked ~ .desktopHeader #desktopNav3::after,
+#nav3_1:checked ~ .desktopHeader #desktopNav3::before,
+#nav4:checked ~ .desktopHeader #desktopNav4::after,
+#nav4:checked ~ .desktopHeader #desktopNav4::before,
+#nav4_1:checked ~ .desktopHeader #desktopNav4::after,
+#nav4_1:checked ~ .desktopHeader #desktopNav4::before,
+#nav5:checked ~ .desktopHeader #desktopNav5::after,
+#nav5:checked ~ .desktopHeader #desktopNav5::before,
+#nav5_1:checked ~ .desktopHeader #desktopNav5::after,
+#nav5_1:checked ~ .desktopHeader #desktopNav5::before,
+#nav5_2:checked ~ .desktopHeader #desktopNav5::after,
+#nav5_2:checked ~ .desktopHeader #desktopNav5::before,
+#nav5_3:checked ~ .desktopHeader #desktopNav5::after,
+#nav5_3:checked ~ .desktopHeader #desktopNav5::before,
+#nav5_4:checked ~ .desktopHeader #desktopNav5::after,
+#nav5_4:checked ~ .desktopHeader #desktopNav5::before,
+#nav5_5:checked ~ .desktopHeader #desktopNav5::after,
+#nav5_5:checked ~ .desktopHeader #desktopNav5::before{
+    content: " ♦ ";
+}
+
+
+@media not all and (min-aspect-ratio: 6/9){
+    .desktopHeader{
+        display: none;
+    }
+}
+
+/* Mobile Header Nav */
+.mobileBack{
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    animation: mobileBackAppear 2.25s ease-out;
+    margin-bottom: -85px;
+}
+
+@keyframes mobileBackAppear {
+    0%{
+        transform: translateY(-150px)   ;
+    }
+    70%{
+        transform: translateY(-150px)
+    }
+    100%{
+        transform: translateY(0) ;
+    }
+}
+.mobileBack img{
+    max-width: 7.5em;
+}
+
+    #nav0:not(:checked) ~ .mobileBack{
+        display: block;
+    }
+@media not all and (min-aspect-ratio: 6/9){
+}
+
+/* Articles */
+
+article {
+    position: relative;
+    z-index: 1;
+    align-content: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, transparent 0%, #333333DD 3%, #333333DD 5%);
+    width: 98%;
+    border-left: solid;
+    border-right: solid;
+    border-image-source: linear-gradient(transparent 0%, #FFFFFFCC 3%, #FFFFFFCC 98%, transparent 100%);
+    border-width: 3px;
+    border-image-slice: 1;
+    padding-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90rem;
+    flex-direction: column;
+    padding-bottom: 5em;
+}
+.aContent > p{
+    max-width: 90%;
+}
+
+#nav1_1:checked ~ .articleGameDev,
+#nav1:checked ~ .articleGameDev,
+#nav2_1:checked ~ .articleGeneralDev,
+#nav2:checked ~ .articleGeneralDev,
+#nav3_1:checked ~ .articleArtwork,
+#nav3:checked ~ .articleArtwork,
+#nav4_1:checked ~ .articleLegacy,
+#nav4:checked ~ .articleLegacy,
+#nav5_1:checked ~ .articleContact,
+#nav5_2:checked ~ .articleContact,
+#nav5_3:checked ~ .articleContact,
+#nav5_4:checked ~ .articleContact,
+#nav5_5:checked ~ .articleContact,
+#nav5:checked ~ .articleContact {
+    display: flex;
+    opacity: 1;
+}
+
+.articleGameDev, .articleGeneralDev, .articleArtwork, .articleLegacy, .articleContact {
+    display: none;
+    animation-name: articleAnim;
+    transform-origin: 50% 0;
+    animation-duration: 1.1s;
+}
+
+@keyframes articleAnim {
+    33% {
+        transform: translateY(-50vh) scaleX(0.01);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0vh) scaleX(0.03);
+        filter: brightness(600%);
+    }
+    100% {
+        transform: translateY(0) scaleX(1);
+        filter: brightness(100%);
+    }
+}
+
+
+.articleGameDev {
+
+}
+
+.articleGeneralDev {
+
+}
+
+.articleArtwork {
+
+}
+
+.articleLegacy {
+
+}
+
+.articleContact {
+
+}
+
+/* Vitian Gallery Navigation */
+
+.imgGallery {
+    backface-visibility: visible;
+    background-color: #222222;
+    position: relative;
+
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-left: solid;
+    border-right: solid;
+
+    border-image-source: linear-gradient(transparent 0%, #FFFFFFCC 5%, #FFFFFFCC 95%, transparent 100%);
+    border-image-slice: 1;
+
+    padding: 0.5em 1em 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    max-height: 100vh;
+    max-width: 85vw;
+
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+.imgGallery:hover {
+    background-color: #191919;
+}
+
+.albumStage {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 75vh;
+
+}
+
+
+.albumArt {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 85vw;
+    max-height: 65vh;
+}
+
+.albumArt img {
+    object-fit: contain;
+    width: 100%;
+    height: 60vh;
+}
+
+.albumArt video {
+    object-fit: contain;
+    width: 100%;
+    height: 60vh;
+}
+
+div.albumNav {
+    margin-top: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 5em;
+
+    background-image: linear-gradient(transparent 0%, #222222 25%, #222222 75%, transparent 100%);
+
+    margin-left: 4em;
+    margin-right: 4em;
+
+    border-left: solid;
+    border-right: solid;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-color: #FFFFFF;
+}
+
+div.albumNav > label {
+    flex: 0 0 5em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    height: 100%;
+}
+
+.albumNav > img.buttonDecors {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-left: 3em;
+    padding-right: 3em;
+    opacity: 0.5;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+@media (max-aspect-ratio: 8/9) {
+    .buttonDecors {
+        display: none;
+    }
+}
+
+@keyframes galleryFlashAnim {
+    from {
+        opacity: 0;
+        filter: brightness(200%);
+    }
+    to {
+        opacity: 1;
+        filter: brightness(100%);
+    }
+}
+
+/*Gallery Specifics*/
+
+.galBase {
+    position: relative;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.75s ease-in-out;
+}
+
+.galBase > p {
+    position: absolute;
+    background-color: #111111CC;
+    text-align: center;
+    padding: 0.5em 2em;
+    left: 0;
+    right: 0;
+    margin: 0;
+    font-style: italic;
+}
+
+#rwVitianNav1:checked ~ .albumStage .vitGal1,
+#rwVitianNav2:checked ~ .albumStage .vitGal2,
+#rwVitianNav3:checked ~ .albumStage .vitGal3,
+#rwVitianNav4:checked ~ .albumStage .vitGal4,
+#rwVitianNav5:checked ~ .albumStage .vitGal5,
+#rwVitianNav6:checked ~ .albumStage .vitGal6,
+#rwVitianNav7:checked ~ .albumStage .vitGal7,
+#rwVitianNav8:checked ~ .albumStage .vitGal8,
+#rwVitianNav9:checked ~ .albumStage .vitGal9,
+#rwVitianNav10:checked ~ .albumStage .vitGal10,
+#rwVitianNav11:checked ~ .albumStage .vitGal11,
+#rwVitianNav12:checked ~ .albumStage .vitGal12,
+#rwVitianNav13:checked ~ .albumStage .vitGal13,
+#rwVitianNav14:checked ~ .albumStage .vitGal14,
+#rwVitianNav15:checked ~ .albumStage .vitGal15{
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#bvAiNav1:checked ~ .albumStage .bvAiGal1,
+#bvAiNav2:checked ~ .albumStage .bvAiGal2,
+#bvAiNav3:checked ~ .albumStage .bvAiGal3 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#libVeilNav1:checked ~ .albumStage .libVeilGal1,
+#libVeilNav2:checked ~ .albumStage .libVeilGal2,
+#libVeilNav3:checked ~ .albumStage .libVeilGal3,
+#libVeilNav4:checked ~ .albumStage .libVeilGal4,
+#libVeilNav5:checked ~ .albumStage .libVeilGal5 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#nhNav1:checked ~ .albumStage .nhGal1,
+#nhNav2:checked ~ .albumStage .nhGal2,
+#nhNav3:checked ~ .albumStage .nhGal3,
+#nhNav4:checked ~ .albumStage .nhGal4,
+#nhNav5:checked ~ .albumStage .nhGal5,
+#nhNav6:checked ~ .albumStage .nhGal6 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#bloonsNav1:checked ~ .albumStage .bloonsGal1,
+#bloonsNav2:checked ~ .albumStage .bloonsGal2,
+#bloonsNav3:checked ~ .albumStage .bloonsGal3,
+#bloonsNav4:checked ~ .albumStage .bloonsGal4,
+#bloonsNav5:checked ~ .albumStage .bloonsGal5,
+#bloonsNav6:checked ~ .albumStage .bloonsGal6,
+#bloonsNav7:checked ~ .albumStage .bloonsGal7,
+#bloonsNav8:checked ~ .albumStage .bloonsGal8,
+#bloonsNav9:checked ~ .albumStage .bloonsGal9,
+#bloonsNav10:checked ~ .albumStage .bloonsGal10,
+#bloonsNav11:checked ~ .albumStage .bloonsGal11,
+#bloonsNav12:checked ~ .albumStage .bloonsGal12,
+#bloonsNav13:checked ~ .albumStage .bloonsGal13,
+#bloonsNav14:checked ~ .albumStage .bloonsGal14,
+#bloonsNav15:checked ~ .albumStage .bloonsGal15,
+#bloonsNav16:checked ~ .albumStage .bloonsGal16,
+#bloonsNav17:checked ~ .albumStage .bloonsGal17,
+#bloonsNav18:checked ~ .albumStage .bloonsGal18,
+#bloonsNav19:checked ~ .albumStage .bloonsGal19,
+#bloonsNav20:checked ~ .albumStage .bloonsGal20,
+#bloonsNav21:checked ~ .albumStage .bloonsGal21,
+#bloonsNav22:checked ~ .albumStage .bloonsGal22,
+#bloonsNav23:checked ~ .albumStage .bloonsGal23,
+#bloonsNav24:checked ~ .albumStage .bloonsGal24,
+#bloonsNav25:checked ~ .albumStage .bloonsGal25 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#arkodexNav1:checked ~ .albumStage .arkodexGal1,
+#arkodexNav2:checked ~ .albumStage .arkodexGal2,
+#arkodexNav3:checked ~ .albumStage .arkodexGal3,
+#arkodexNav4:checked ~ .albumStage .arkodexGal4 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#bespokeNav1:checked ~ .albumStage .bespokeGal1,
+#bespokeNav2:checked ~ .albumStage .bespokeGal2,
+#bespokeNav3:checked ~ .albumStage .bespokeGal3 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#dllinjectorNav1:checked ~ .albumStage .dllinjectorGal1,
+#dllinjectorNav2:checked ~ .albumStage .dllinjectorGal2 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#deobfuscationNav1:checked ~ .albumStage .deobfuscationGal1,
+#deobfuscationNav2:checked ~ .albumStage .deobfuscationGal2 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#crackArenaNav1:checked ~ .albumStage .crackArenaGal1,
+#crackArenaNav2:checked ~ .albumStage .crackArenaGal2,
+#crackArenaNav3:checked ~ .albumStage .crackArenaGal3 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#vitianAvatarNav1:checked ~ .albumStage .vitianAvatarGal1,
+#vitianAvatarNav2:checked ~ .albumStage .vitianAvatarGal2,
+#vitianAvatarNav3:checked ~ .albumStage .vitianAvatarGal3,
+#vitianAvatarNav4:checked ~ .albumStage .vitianAvatarGal4,
+#vitianAvatarNav5:checked ~ .albumStage .vitianAvatarGal5 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#jvmNav1:checked ~ .albumStage .jvmGal1,
+#jvmNav2:checked ~ .albumStage .jvmGal2,
+#jvmNav3:checked ~ .albumStage .jvmGal3 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#wavelordNav1:checked ~ .albumStage .wavelordGal1,
+#wavelordNav2:checked ~ .albumStage .wavelordGal2,
+#wavelordNav3:checked ~ .albumStage .wavelordGal3,
+#wavelordNav4:checked ~ .albumStage .wavelordGal4,
+#wavelordNav5:checked ~ .albumStage .wavelordGal5 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#fluxworldNav1:checked ~ .albumStage .fluxworldGal1,
+#fluxworldNav2:checked ~ .albumStage .fluxworldGal2,
+#fluxworldNav3:checked ~ .albumStage .fluxworldGal3,
+#fluxworldNav4:checked ~ .albumStage .fluxworldGal4,
+#fluxworldNav5:checked ~ .albumStage .fluxworldGal5,
+#fluxworldNav6:checked ~ .albumStage .fluxworldGal6,
+#fluxworldNav7:checked ~ .albumStage .fluxworldGal7,
+#fluxworldNav8:checked ~ .albumStage .fluxworldGal8,
+#fluxworldNav9:checked ~ .albumStage .fluxworldGal9,
+#fluxworldNav10:checked ~ .albumStage .fluxworldGal10,
+#fluxworldNav11:checked ~ .albumStage .fluxworldGal11,
+#fluxworldNav12:checked ~ .albumStage .fluxworldGal12 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#innumNav1:checked ~ .albumStage .innumGal1,
+#innumNav2:checked ~ .albumStage .innumGal2,
+#innumNav3:checked ~ .albumStage .innumGal3,
+#innumNav4:checked ~ .albumStage .innumGal4,
+#innumNav5:checked ~ .albumStage .innumGal5,
+#innumNav6:checked ~ .albumStage .innumGal6,
+#innumNav7:checked ~ .albumStage .innumGal7{
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#reintrudeNav1:checked ~ .albumStage .reintrudeGal1,
+#reintrudeNav2:checked ~ .albumStage .reintrudeGal2,
+#reintrudeNav3:checked ~ .albumStage .reintrudeGal3,
+#reintrudeNav4:checked ~ .albumStage .reintrudeGal4,
+#reintrudeNav5:checked ~ .albumStage .reintrudeGal5,
+#reintrudeNav6:checked ~ .albumStage .reintrudeGal6,
+#reintrudeNav7:checked ~ .albumStage .reintrudeGal7,
+#reintrudeNav8:checked ~ .albumStage .reintrudeGal8 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+#omega9Nav1:checked ~ .albumStage .omega9Gal1,
+#omega9Nav2:checked ~ .albumStage .omega9Gal2,
+#omega9Nav3:checked ~ .albumStage .omega9Gal3,
+#omega9Nav4:checked ~ .albumStage .omega9Gal4 {
+    opacity: 1;
+    display: flex;
+    animation: galleryFlashAnim 0.33s linear;
+}
+
+
+.gallerySingle {
+    opacity: 1;
+    display: flex;
+    position: relative;
+}
+
+/* Gallery Uniques */
+
+.doomSuperContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doomContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doomContainer img{
+    max-width: 90vw;
+}
+
+.doomHoverAnim:hover {
+    filter: brightness(30%);
+}
+
+.doomHoverAnim:hover ~ .doomHoverOnlyElement {
+    opacity: 1;
+}
+
+.doomHoverOnlyElement {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    height: 20%;
+}
+
+.ytframe {
+    max-width: 100%;
+    max-height: 60vh;
+    display: flex;
+    flex: auto;
+}
+
+/* Ring Stuff */
+
+.arkLogo {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-top: auto;
+    max-height: 100vh;
+
+    width: 100%;
+    margin-bottom: auto;
+
+    justify-content: center;
+}
+
+.arkLogo img {
+    max-height: 100%;
+}
+
+
+div.ringOffset {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+}
+
+div.ring {
+    position: absolute;
+    top: 20px;
+    width: 50%;
+    left: 25%;
+
+}
+
+img.portalImage {
+    position: absolute;
+    z-index: 0;
+    object-fit: cover;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-20%);
+    opacity: 0;
+    transition: all .6s;
+    clip-path: circle(50%);
+    /*clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+    /*animation: 18s ease 1s infinite alternate gentlestir;*/
+}
+
+
+div.portalImgOffset {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+    animation: portal 9s linear infinite,
+    wobble 13s ease-in-out infinite alternate;
+
+}
+
+
+div.ring > img:last-child {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*
+@keyframes gentleSpaceMove {
+  0% {background-position: 50.7696px 44.8116px;}
+  7% {background-position: 61.4392px 53.5441px;}
+  15% {background-position: 56.6489px 58.6305px;}
+  17% {background-position: 57.7434px 57.2289px;}
+  25% {background-position: 41.8538px 37.6603px;}
+  29% {background-position: 61.3877px 56.9453px;}
+  47% {background-position: 53.9219px 37.0296px;}
+  65% {background-position: 40.3048px 46.0815px;}
+  69% {background-position: 42.4136px 47.2889px;}
+  78% {background-position: 44.2147px 60.6381px;}
+  90% {background-position: 57.2243px 61.876px;}
+  100% {background-position: 52.3057px 49.448px;}
+}*/
+
+@keyframes gentleOpacity {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes wobble {
+    from {
+        transform: perspective(600px) rotateX(1deg) rotateY(-1deg);
+    }
+    to {
+        transform: perspective(600px) rotateX(-1deg) rotateY(1deg);
+    }
+}
+
+@keyframes starSparkle {
+    0% {
+        transform: scale(1, 1);
+    }
+    2% {
+        transform: scale(2, 2);
+    }
+    4% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/* Contacts Stuff */
+.gridList{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10em;
+    width: 90%;
+    max-width: 50em;
+    column-width: 18rem;
+    column-gap: 2rem;
+    columns: 2;
+}
+@media not all and (min-aspect-ratio: 6/9) {
+    .gridList{
+        padding-left: 3em;
+        columns: 1;
+    }
+}
+.articleContact{
+    margin-top: -180px;
+}
+
+#contactLogo{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+#contactLogo img{
+    max-width: 30em;
+}
+.callerText{
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-align: center;
+    font: 24px 'Linux Libertine Display', sans-serif;
+    color: #aa83f1;
+}
+#lovesContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 18em;
+    max-width: 45em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.linkerBox{
+    width: 20em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.linkerBox img{
+    max-height: 10em;
+}
+.linkerBox > h3{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media not all and (min-aspect-ratio: 6/9) {
+    #lovesContainer{
+        display: block;
+        height: 36em;
+    }
+    .linkerBox{
+        padding-bottom: 2em;
+    }
+}
+
+.letterLogo{
+    max-width: 15em;
+    margin: 4em auto 2em;
+}
+
+/* Additional Contact Links */
+
+.articleContactLinkerText{
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-align: center;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    font: 32px 'Linux Libertine', serif;
+    color: #78c9cb;
+}
+.articleContactLinkerText:hover{
+    text-decoration: underline;
+    opacity: 0.5;
+}

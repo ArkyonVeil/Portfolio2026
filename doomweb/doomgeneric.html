@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Loading...</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="spinner" id='spinner'></div>
+<div class="emscripten" id="status">Downloading...</div>
+
+<div class="emscripten">
+    <progress value="0" max="100" id="progress" hidden=1></progress>
+</div>
+
+
+<div class="emscripten_border">
+    <div class="doomHelpContainer">
+        <img src="DoomHelp.svg" class="doomHelp">
+    </div>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+    <div class="doomAbout">
+        <h2>About this Port</h2>
+        <p>Source port pulled from Github, by Ozkl.
+            Successfully compiled by ArkyonVeil, controls adjusted for easier play alongside minor quality of life tweaks.</p>
+        <p>Sound issues? Try running it in Firefox.</p>
+        <p>Built using the Freedoom 2 Source Port, and loaded with the Cacoward winning Alien Vendetta WAD.</p>
+        <p>This port further adds the Alien Vendetta MIDI Pack, a legendary album created in 2022 by over 30 doom musicians. So you can shoot monster with the best tunes possible</p>
+        <ul>
+            <li><a href="https://freedoom.github.io/">Freedoom 2</a></li>
+            <li><a href="https://doomwiki.org/wiki/Alien_Vendetta">Alien Vendetta</a></li>
+            <li><a href="https://doomwiki.org/wiki/Alien_Vendetta_MIDI_Pack">Alien Vendetta MIDI pack</a></li>
+            <li><a href="https://github.com/ozkl/doomgeneric">Ozkl's Source Port</a></li>
+        </ul>
+        <p>Please note, this port is just a proof of work. It may be prone to crashing, doesn't support saving, cheats nor mouse movement.</p>
+        <p>When it crashes, reload the page.</p>
+        <h3>How to compile your own Doom for the Web</h3>
+        <p>It's <a href="https://en.wikipedia.org/wiki/I_Wanna_Be_the_Guy">very easy</a> and <a href="https://dwarffortresswiki.org/images/4/40/FunComic.png">fun</a>, just do the following.</p>
+        <ol>
+            <li>Grab the port from Ozkl</li>
+            <li>Grab Docker, if you'd like to face a local installation of Emscripten best of luck. Hair follicles belong on skulls.</li>
+            <li>Grab Doom 1, Doom 2, or a Freedoom IWAD and dump it in the doomgeneric folder.</li>
+            <li>To my knowledge Timidity sound files are not included, so you'll have to get them from <a href="https://github.com/scooterpsu/midi-enabler">here.</a></li>
+            <li>This step might not be required, but also toss the timidity.cfg from that github into the doomgeneric folder, just to be safe. If you decide to ignore this step, you'll later have to also remove timidity.cfg from the makefile file in a later step.</li>
+            <li>Dump them in the doomgeneric folder in the following path structure doomgeneric/etc/timidity</li>
+            <li>Skip the previous 3 steps  if you want to compile without music.</li>
+            <li>Command line/Powershell CD to the doomgeneric folder.</li>
+            <li>Included in this site is the <a href="Makefile.emscripten">Makefile.emscripten</a> I modified. Because couldn't get it to compile using Ozkl's version. Replace the one in doomgeneric with mine.</li>
+            <li>Open Makefile.emscripten and replace freedoom2.wad with whichever IWAD you're using. Ignore if you're running with Freedoom 2.</li>
+            <li>Run the following code in cmd (once Docker is running):<br /> <code>docker run --rm `
+                -v ${PWD}:/src `
+                emscripten/emsdk:3.1.35 `
+                emmake make -f Makefile.emscripten</code><br />
+            The emscripten version is important, later versions have a bug that prevents sounds from working.</li>
+            <li>If all goes well, you should have a functional build of Doom. Put it inside a server and access it. (I used Caddy)</li>
+            <li>Download UZDoom/DSDA/Chocolate Doom, or a myriad of other much better source ports and have yourself some proper fun. <'>)</li>
+        </ol>
+    </div>
+    <div class="doomMidSpacer"></div>
+</div>
+<div class="mobileWarning">
+    <h3>This port does not support mobile input. Enjoy the Demos though.</h3>
+</div>
+<div class="mobileAbout">
+    <h2>About this Port</h2>
+    <p>Source port pulled from Github, by Ozkl.
+        Successfully compiled by ArkyonVeil, controls adjusted for easier play alongside minor quality of life tweaks.</p>
+    <p>Sound issues? Try running it in Firefox.</p>
+    <p>Built using the Freedoom 2 Source Port, and loaded with the Cacoward winning Alien Vendetta WAD.</p>
+    <p>This port further adds the Alien Vendetta MIDI Pack, a legendary album created in 2022 by over 30 doom musicians. So you can shoot monsters with the best tunes possible</p>
+    <ul>
+        <li><a href="https://freedoom.github.io/">Freedoom 2</a></li>
+        <li><a href="https://doomwiki.org/wiki/Alien_Vendetta">Alien Vendetta</a></li>
+        <li><a href="https://doomwiki.org/wiki/Alien_Vendetta_MIDI_Pack">Alien Vendetta MIDI pack</a></li>
+        <li><a href="https://github.com/ozkl/doomgeneric">Ozkl's Source Port</a></li>
+    </ul>
+    <p>Please note, this port is just a proof of work. It may be prone to crashing, doesn't support saving, cheats nor mouse movement.</p>
+    <p>When it crashes, reload the page.</p>
+    <h3>How to compile your own Doom for the Web</h3>
+    <p>It's <a href="https://en.wikipedia.org/wiki/I_Wanna_Be_the_Guy">very easy</a> and <a href="https://dwarffortresswiki.org/images/4/40/FunComic.png">fun</a>, just do the following.</p>
+    <ol>
+        <li>Grab the port from Ozkl</li>
+        <li>Grab Docker, if you'd like to face a local installation of Emscripten best of luck. Hair follicles belong on skulls.</li>
+        <li>Grab Doom 1, Doom 2, or a Freedoom IWAD and dump it in the doomgeneric folder.</li>
+        <li>To my knowledge Timidity sound files are not included, so you'll have to get them from <a href="https://github.com/scooterpsu/midi-enabler">here.</a></li>
+        <li>This step might not be required, but also toss the timidity.cfg from that github into the doomgeneric folder, just to be safe. If you decide to ignore this step, you'll later have to also remove timidity.cfg from the makefile file in a later step.</li>
+        <li>Dump them in the doomgeneric folder in the following path structure doomgeneric/etc/timidity</li>
+        <li>Skip the previous 3 steps  if you want to compile without music.</li>
+        <li>Command line/Powershell CD to the doomgeneric folder.</li>
+        <li>Included in this site is the <a href="Makefile.emscripten">Makefile.emscripten</a> I modified. Because couldn't get it to compile using Ozkl's version. Replace the one in doomgeneric with mine.</li>
+        <li>Open Makefile.emscripten and replace freedoom2.wad with whichever IWAD you're using. Ignore if you're running with Freedoom 2.</li>
+        <li>Run the following code in cmd (once Docker is running):<br /> <code>docker run --rm `
+            -v ${PWD}:/src `
+            emscripten/emsdk:3.1.35 `
+            emmake make -f Makefile.emscripten</code><br />
+            The emscripten version is important, later versions have a bug that prevents sounds from working.</li>
+        <li>If all goes well, you should have a functional build of Doom. Put it inside a server and access it. (I used Caddy)</li>
+        <li>Download UZDoom/DSDA/Chocolate Doom, or a myriad of other much better source ports and have yourself some proper fun. <'>)</li>
+    </ol>
+
+</div>
+<textarea id="output" rows="8"></textarea>
+
+<script type='text/javascript'>
+    var statusElement = document.getElementById('status');
+    var progressElement = document.getElementById('progress');
+    var spinnerElement = document.getElementById('spinner');
+
+    var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function () {
+            var element = document.getElementById('output');
+            if (element) element.value = ''; // clear browser cache
+            return function (text) {
+                if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                // These replacements are necessary if you render to raw HTML
+                //text = text.replace(/&/g, "&amp;");
+                //text = text.replace(/</g, "&lt;");
+                //text = text.replace(/>/g, "&gt;");
+                //text = text.replace('\n', '<br>', 'g');
+                console.log(text);
+                if (element) {
+                    element.value += text + "\n";
+                    element.scrollTop = element.scrollHeight; // focus on bottom
+                }
+            };
+        })(),
+        canvas: (function () {
+            var canvas = document.getElementById('canvas');
+
+            // As a default initial behavior, pop up an alert when webgl context is lost. To make your
+            // application robust, you may want to override this behavior before shipping!
+            // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
+            canvas.addEventListener("webglcontextlost", function (e) {
+                alert('WebGL context lost. You will need to reload the page.');
+                e.preventDefault();
+            }, false);
+
+            return canvas;
+        })(),
+        setStatus: function (text) {
+            if (!Module.setStatus.last) Module.setStatus.last = {time: Date.now(), text: ''};
+            if (text === Module.setStatus.last.text) return;
+            var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+            var now = Date.now();
+            if (m && now - Module.setStatus.last.time < 30) return; // if this is a progress update, skip it if too soon
+            Module.setStatus.last.time = now;
+            Module.setStatus.last.text = text;
+            if (m) {
+                text = m[1];
+                progressElement.value = parseInt(m[2]) * 100;
+                progressElement.max = parseInt(m[4]) * 100;
+                progressElement.hidden = false;
+                spinnerElement.hidden = false;
+            } else {
+                progressElement.value = null;
+                progressElement.max = null;
+                progressElement.hidden = true;
+                if (!text) spinnerElement.style.display = 'none';
+            }
+            statusElement.innerHTML = text;
+        },
+        totalDependencies: 0,
+        monitorRunDependencies: function (left) {
+            this.totalDependencies = Math.max(this.totalDependencies, left);
+            Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies - left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+        }
+    };
+    Module.setStatus('Downloading...');
+    window.onerror = function (event) {
+        // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+        Module.setStatus('Exception thrown, game has crashed. Please reload page.');
+        spinnerElement.style.display = 'none';
+        Module.setStatus = function (text) {
+            if (text) console.error('[post-exception status] ' + text);
+        };
+    };
+</script>
+<script async type="text/javascript" src="doomgeneric.js"></script>
+</body>
+</html>
+
+
