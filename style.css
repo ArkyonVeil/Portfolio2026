@@ -521,6 +521,7 @@ input[type="radio"] {
 }
 
 .navContact img {
+    width: 100%;
     transform: translateY(5px);
 }
 
@@ -533,6 +534,9 @@ input[type="radio"] {
     }
     .navContact{
         width: 80%;
+    }
+    .navBigButton img{
+        width: 100%;
     }
 }
 
